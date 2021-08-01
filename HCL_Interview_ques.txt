@@ -1,0 +1,464 @@
+PSS
+
+Explain about your last project.
+What was your role in you last project?
+Have you come across any challenge in your project?
+Explain the end to end flow about your project.
+What is a Parquet file?
+Are you interested to work in a Support project? This project won’t involve any coding/technical activity or doesn’t have onsite opportunities.
+If there is an existing job which suddenly started to run very slow, what would be the starting point for your analysis? Consider the amount of data being processed remain constant.
+In a customer purchase table, I need to see the customers who has purchased products multiple times. Write the SQL query. Which clause has to be used? 
+What are different types of tables in Hive?
+If you have dropped an External table what will happen to the data?
+Is there a way to delete data of an external table from Hive?
+Which hadoop distribution have you used in your project?
+Which version of HDP you have used in project? Which version of Spark was used?
+Have you worked in any migration projects before?
+
+L&C
+
+Talk about your experience in Bigdata project
+Number of years of experience in Spark
+Explain Hadoop/HDFS architecture
+What is case class in Scala?
+Have you created functions in Scala? What is tail recursion function in Scala?
+Which programming languages have you used in developing Spark applications?
+What is DAG?
+What happens in the backend when you submit a Spark job?
+What is the advantage of lazy evaluation?
+What is a map? What is it used for?
+Difference between map and flatmap?
+Have you used any job monitoring tool with Spark? (YARN)
+Have you used any IDE for Scala coding/development ?
+Are you familiar with Eclipse IDE?
+What is the build tool used to create JAR files for Spark-submit ?
+What is the batch job scheduler you are familiar with?
+Provide the commandline build package command to create JAR file
+Have you used pySpark to run spark applications?
+Explain the experience with Hive
+Difference between External and managed tables in Hive
+How to update an existing record in Hive table
+Explain a challenge you have faced in the Spark project you worked
+
+
+
+CDO
+
+Talk about yourself
+Talk about your experience in Bigdata project, explain end to end process
+Explain the architecture of Hadoop, version 1 and 2
+Which programming languages have you used in developing Spark applications?
+What kind of transformations you have used in Scala code?
+What is the difference between map and flatmap?
+What is case class in Scala?
+What is Common Table Expressions in SQL?
+How to get the second highest Salary by Dept from an employee table?
+What happens in the backend when you submit a Spark job?
+How did you develop the spark aopplication? Which method you have used to execute the Spark application?
+Which are the parameters that will be passed with a spark-submit command?
+What are the parameters to be adjusted to avoid a memory issue while submitting a spark job?
+How can you see the logs of submitted Spark application?
+What are the methods to access logs other than GUI? How can I see the log if I have the application id?
+What is an External table in Hive? What is the purpose of creating it?
+What is partitioning in Hive? What is the difference between static and dynamic partitioning?
+What are the parameters to be updated while doing a dynamic partition?
+What is bucketing? How is it different from partitioning?
+Consider there is a large Hadoop cluster and you are submitting a Spark job. Which is the parameter that need to be used while submitting the spark job?
+Explain the experience with Hive
+Have you worked in streaming?
+
+
+
+1. Hadoop ecosystem
+2. What is partitioning and it's syntax
+3. What is bucketing and it's syntax
+4. Difference between partition and bucketing
+5. Difference between HIVE and HBASE
+
+ 
+
+1. Explain recently written shell script.
+2. Difference between FIND and GREP.
+3. Other Basic commands
+
+ 
+
+In hive we have a table with columns a b c, and we have altered the table as a c b. Will there be a physical change in HDFS?
+Fibonacci series
+file formats in hive -> text and orc
+partition in external table
+joins in hive
+sum(string) will work in hive?
+shell scripting scheduler
+How will a shell script run in back ground.
+
+ 
+
+Capgemini Interview questions with Answer:
+
+ 
+
+What is edge node in hadoop
+
+ 
+
+                * Edge node is nothing but a gatekeeper to hadoop cluster.
+
+                * The EdgeNode sits between the Hadoop cluster and the corporate network to provide access control, policy enforcement, logging, and gateway services to the
+
+                  Hadoop environment.
+
+                * A typical Hadoop environment will have a minimum of one EdgeNode and more based on performance needs.
+
+                * The edge node does not have to be part of the cluster, however if it is outside of the cluster (meaning it doesn't have any specific Hadoop service roles
+
+                  running on it).
+
+                * Usually this is a one-to-many approach, where config entries are updated in one location and are pushed out to all (many) nodes in the cluster.
+
+                * Typically edge-nodes are kept separate from the nodes that contain Hadoop services such as HDFS, MapReduce, etc, mainly to keep computing resources separate.
+
+                * The EdgeNode is the access point for the external applications, tools(Oozie, Pig, Sqoop, and management tools), and users that need to utilize the Hadoop
+
+                  environment.
+
+                * Depending on which distribution is in use, edge nodes run within the cluster allow for centralized management of all the Hadoop configuration entries on the
+
+          cluster nodes which helps to reduce the amount of administration needed to update the config files.
+
+ 
+
+How to remove comma(,) which is in the data ? Whole length of the column is 10 for each columns.
+
+ 
+
+                * sed s/,/||,3/g filename.txt
+
+                               
+
+                                s for subtition and second parameter comma(,) is what we need to replace and third parameter || is what we are going to replace and firth paramer
+
+                                3 is which position we have to start from and fifth parameter g is we are mentioning we are going to perform this in global.
+
+               
+
+                100, name1, sal1, dep1, email1
+
+                101, name2, sal2, dep2, email2
+
+                102, name3, sal3, dep3, email3
+
+ 
+
+                                                so it will start from 3rd position of comma(,) that is after sal column.
+
+ 
+
+                * Using shell script we can achieve. Need to find the length of all the columns if column length exceeds 10 then we have to remove the unwanted comma
+
+          using some function or substring in scala.
+
+ 
+
+How to do modification(update for few records) in source data after sqooping into HDFS?
+
+ 
+
+                http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html#_inserts_vs_updates
+
+ 
+
+Difference between internal table and external table?
+
+ 
+
+How we could perform partition in external table?
+
+ 
+
+https://stackoverflow.com/questions/32580356/creating-partition-in-external-table-in-hive
+
+
+What are all the issues faced while performing sqooping ?
+
+ 
+
+                * Export works by multiple map task. Each map task connect to database separately and transfer the data. Each map task are independent and operates in a
+
+                  separate transaction. Each map task commits the transaction periodically.
+
+                * So if a task fails the current transaction will be rolled back but the previously committed records will be present leading to a partially complete export.
+
+                * Job getting failed due to database server connection timeout and low disk space issues. Most of the time partial loading due to job failures.
+
+ 
+
+How to find particular word count in the file using shell script?
+
+ 
+
+                grep -cow "$word" "$filename"
+
+                grep -wc "file" filename
+
+                wc -word <file> --> Used to find all words in the file.
+
+ 
+
+What are all the schedulers you have used ? did you used m-controller?
+
+            *
+
+     
+
+What are all the version control you have used and how to see the previous committed files in the version control?
+
+                SVN
+
+
+Shell Scripting Interview Questions with Answer
+
+1. Fibonacci series
+
+-------------------
+
+ 
+
+function Fibonacci {
+
+  case $1 in
+
+    0|1) printf "$1 " ;;
+
+    *)   printf "$(( $(Fibonacci $(($1-2))) + $(Fibonacci $(($1-1))) )) ";;
+
+  esac
+
+}
+
+ 
+
+for (( i=0; i<=$1; i++ )); do
+
+  Fibonacci $i
+
+done
+
+echo
+
+ 
+print the first 10 elements of Fibonacci series
+
+-----------------------------------------------
+
+#!/bin/sh
+
+a=1
+
+b=1
+
+echo $a
+
+echo $b
+
+for I in 1 2 3 4 5 6 7 8
+
+do
+
+c=a
+
+b=$a
+
+b=$(($a+$c))
+
+echo $b
+
+done
+
+
+
+2. How to debug bash script
+
+---------------------------
+
+ 
+
+Add -xv to #!/bin/bash
+
+Example
+
+#!/bin/bash –xv
+
+ 
+
+3. How to run script in background ?
+
+------------------------------------
+
+add "&" to the end of script
+
+ 
+
+What is nohup in UNIX?
+
+----------------------
+
+* avoids all SIGHUP(terminate signal) and continues execution even if you terminal is closed
+
+* When you run an executable with nohup, the process won't be killed when you logout (ssh session);
+
+ * usually nohup is used with nice to run processes on a lower priority.
+
+ 
+How to get part of string variable with echo command only ?
+
+-----------------------------------------------------------
+
+echo ${variable:x:y}
+
+x - start position
+
+y - length
+
+ 
+
+example:
+
+variable="My name is Petras, and I am developer."
+
+echo ${variable:11:6} # will display Petras
+
+
+How to change standard field separator to ":" in bash shell ?
+
+-------------------------------------------------------------
+
+IFS=":"
+
+How do you find which processes are using a particular file?
+
+------------------------------------------------------------
+
+ 
+
+By using lsof command in UNIX. It wills list down PID of all the process which is using a particular file.
+
+ 
+
+If one process is inserting data into your MySQL database? How will you check how many rows inserted into every second?
+
+-----------------------------------------------------------------------------------------------------------------------
+
+ 
+
+Purpose of this Unix Command Interview is asking about "watch" command in UNIX which is repeatedly execute command provided with specified delay.
+
+ 
+
+How will you find the 99th line of a file using only tail and head command?
+
+---------------------------------------------------------------------------
+
+ 
+
+tail +99 file1|head -1
+
+ 
+
+Print the 10th line without using tail and head command.
+
+-------------------------------------------------------
+
+ 
+
+sed –n '10p' file1
+
+ 
+
+How will you copy a file from one machine to other?
+
+---------------------------------------------------
+
+ 
+
+We can use utilities like “ftp,” ”scp” or “rsync” to copy a file from one machine to other.
+
+E.g., Using ftp:
+
+FTP hostname
+
+>put file1
+
+>bye
+
+Above copies, file file1 from the local system to destination system whose hostname is specified.
+
+ 
+
+I want to monitor a continuously updating log file, what command can be used to most efficiently achieve this?
+
+-------------------------------------------------------------------------------------------------------------
+
+ 
+
+We can use tail –f filename. This will cause only the default last 10 lines to be displayed on std o/p which continuously shows the updating part of the file.
+
+ 
+
+I have 2 files and I want to print the records which are common to both.
+
+------------------------------------------------------------------------
+
+ 
+
+We can use “comm” command as follows:
+
+comm -12 file1 file2               
+
+ 
+
+How will I insert a line “ABCDEF” at every 100th line of a file?
+
+----------------------------------------------------------------
+
+ 
+
+sed ‘100i\ABCDEF’ file1
+
+ 
+
+ 
+
+ 
+
+Hive Partition in External Table:
+
+ 
+
+                * Hive will not create the partitions for you this way.
+
+                * Just create a table partitioned by the desired partition key, then execute insert overwrite table from the external table to the new partitioned table
+
+         (setting hive.exec.dynamic.partition=true and hive.exec.dynamic.partition.mode=nonstrict).
+
+                * If you must keep the table partitioned externally you have to manually create the directories (1 directory per partition the name should be
+
+          PARTION_KEY=VALUE)
+
+ 
+
+How to compare two rdds using scala spark?
+
+ 
+
+scala> val File1 = spark.sparkContext.textFile("File1.txt")
+
+scala> val File2 = spark.sparkContext.textFile("File2.txt")
+
+scala> File2.subtract(File1).collect
+
+ 
+
+hbase rest api : https://www.cloudera.com/documentation/enterprise/5-9-x/topics/admin_hbase_rest_api.html
+
+ 
